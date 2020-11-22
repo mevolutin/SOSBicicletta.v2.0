@@ -32,6 +32,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
@@ -253,17 +254,9 @@ public class MappaFragment extends Fragment implements OnMapReadyCallback, Googl
                         .fillColor(Color.RED)
                         .strokeWidth(5.0f).clickable(true)
                         );*/
-                mGoogleMap.addMarker(new MarkerOptions().position(latLng).title("Driver"));
+                mGoogleMap.addMarker(new MarkerOptions().position(latLng).draggable(false).title("Driver: ").snippet("Telefono").icon(BitmapDescriptorFactory.fromResource(R.drawable.baseline_bike_18dp)));
                 Log.d("diooo", "onMapReady: "+latLng);
             }
-
-
-
-
-
-
-
-
 
 
     }
@@ -339,7 +332,7 @@ public class MappaFragment extends Fragment implements OnMapReadyCallback, Googl
                         .fillColor(Color.RED)
                         .strokeWidth(5.0f).clickable(true)
                         );*/
-                mGoogleMap.addMarker(new MarkerOptions().position(latLng1).title("Driver"));
+                mGoogleMap.addMarker(new MarkerOptions().position(latLng1).title("Driver").draggable(false).icon(BitmapDescriptorFactory.fromResource(R.drawable.baseline_bike_18dp)));
                 Log.d("diooo", "onMapReady: "+latLng1);
             }
 
