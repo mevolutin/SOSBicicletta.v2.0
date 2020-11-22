@@ -8,6 +8,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -116,6 +117,7 @@ public class MappaFragment extends Fragment implements OnMapReadyCallback, Googl
                         mapFragment.getMapAsync(MappaFragment.this); */
 
                         initDriver();
+
 
 
                     }
@@ -244,13 +246,14 @@ public class MappaFragment extends Fragment implements OnMapReadyCallback, Googl
             }
             fusedLocationProviderClient.requestLocationUpdates(locationRequest, locationCallback, Looper.myLooper());
             mGoogleMap.setMyLocationEnabled(true);
+
             for(LatLng latLng: Driver){
                /* mGoogleMap.addCircle(new CircleOptions().center(latLng).radius(5)
                         .strokeColor(Color.RED)
                         .fillColor(Color.RED)
                         .strokeWidth(5.0f).clickable(true)
                         );*/
-                mGoogleMap.addMarker(new MarkerOptions().position(latLng));
+                mGoogleMap.addMarker(new MarkerOptions().position(latLng).title("Driver"));
                 Log.d("diooo", "onMapReady: "+latLng);
             }
 
@@ -318,13 +321,14 @@ public class MappaFragment extends Fragment implements OnMapReadyCallback, Googl
         }
         SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.mapview);
         mapFragment.getMapAsync(MappaFragment.this);
+
         if (mGoogleMap != null)
         {
             mGoogleMap.clear();
             //add pos utente
 
 
-            LatLng latLng = new LatLng(lastLocation.getLatitude(),lastLocation.getLongitude());
+           // LatLng latLng = new LatLng(lastLocation.getLatitude(),lastLocation.getLongitude());
             //Dopo aver aggiunto il marker, sposta telecamera
            /* mGoogleMap.animateCamera(CameraUpdateFactory
                     .newLatLngZoom(latLng, 17.0f));*/
@@ -335,7 +339,7 @@ public class MappaFragment extends Fragment implements OnMapReadyCallback, Googl
                         .fillColor(Color.RED)
                         .strokeWidth(5.0f).clickable(true)
                         );*/
-                mGoogleMap.addMarker(new MarkerOptions().position(latLng1));
+                mGoogleMap.addMarker(new MarkerOptions().position(latLng1).title("Driver"));
                 Log.d("diooo", "onMapReady: "+latLng1);
             }
 
