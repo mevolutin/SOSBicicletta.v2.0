@@ -233,9 +233,8 @@ public class PercorsiFragment extends Fragment {
     private static final NamedLocation[] LIST_LOCATIONS = new NamedLocation[]{
             new NamedLocation("Giro ad Anzio", new LatLng(41.4487961, 12.6246567),R.raw.anzio4,15.3f),
             new NamedLocation("Tour di Anzio", new LatLng(41.4496568, 12.6307489),R.raw.anzio3,14.5f),
-            new NamedLocation("Tour di Lavinio", new LatLng(41.4487961, 12.6246567),R.raw.anzio4,15.3f),
-            new NamedLocation("Passegiata a Nettuno", new LatLng(41.4496568, 12.6307489),R.raw.anzio3,14.5f),
-
+            new NamedLocation("Tour di Lavinio", new LatLng(41.499331, 12.585817),R.raw.lavinio1,14.3f),
+            new NamedLocation("Passegiata a Nettuno", new LatLng(41.458187, 12.664156),R.raw.nettuno2,15.4f)
     };
 
 }
